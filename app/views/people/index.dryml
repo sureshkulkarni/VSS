@@ -1,0 +1,9 @@
+<index-page>
+	<sm:><search-and-browse-address/></sm:>
+	<collection: replace>
+		<div>
+			<table-plus fields="this, phone, mobile, state, email" />
+		</div>
+	</collection:>
+</index-page>
+

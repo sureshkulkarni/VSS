@@ -1,0 +1,246 @@
+<!-- Global taglib - these tags are shared across all subsites -->
+
+<include src="rapid" gem="hobo"/>
+<include gem="hobo-jquery" />
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+
+<set-theme name="clean"/>
+<!--
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend>
+-->
+<extend tag="page">
+	<old-page merge without-live-search >
+		<custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+		<content: replace>
+			
+			<section-group class="page-content">
+				<aside param="aside1">
+					<live-search param if='&defined_route? :site_search'/>
+					<p>&nbsp;</p>
+					<p param="sm"/>
+					<p>&nbsp;</p>
+					<search-and-browse-main/>
+					<p>&nbsp;</p>
+				</aside>
+				<section param="content"/>
+			</section-group>
+		</content:>
+		<footer:><app-name/>&nbsp;&nbsp;</footer:>
+	</old-page>
+</extend>
+
+<def tag="search-and-browse-address" attrs="current-subject">
+  <div class="search-and-browse round">
+ 		<div param="browse-by-subject">
+ 			<h3>People Masters</h3>
+			<navigation current="&current_subject">
+				<nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+				<hr/>
+				<nav-item with="&State"><ht key="state.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+				<nav-item with="&District"><ht key="district.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+				<nav-item with="&Taluka"><ht key="taluka.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+				<nav-item with="&Atpost"><ht key="atpost.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<hr/>
+   			<nav-item with="&Salutation"><ht key="salutation.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Person"><ht key="person.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+			</navigation>
+		</div>
+	</div><br/>
+</def>
+
+<def tag="search-and-browse-donation" attrs="current-subject">	
+	<div class="search-and-browse round">
+ 		<div param="browse-by-subject">
+ 			<h3>Donations Masters</h3>
+			<navigation current="&current_subject">
+   			<nav-item with="&Donationcondition"><ht key="donationcondition.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Donationtype"><ht key="donationtype.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Paymentmode"><ht key="paymentmode.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Currency"><ht key="currency.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Donationperiod"><ht key="donationperiod.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<hr/>
+   			<nav-item with="&DonationCard"><ht key="donation_card.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+   			<nav-item with="&Donation"><ht key="donation.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+			</navigation>
+		</div>
+	</div>
+</def>
+
+<def tag="search-and-browse-main" attrs="current-subject">	
+	<div class="search-and-browse round">
+ 		<div param="browse-by-subject">
+ 			<h3>Main Menu</h3>
+			<navigation current="&current_subject">
+   			<nav-item href="#{base_url}/">Home</nav-item>
+   			<nav-item with="&Person"><ht key="person.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    		<nav-item with="&DonationCard"><ht key="donation_card.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    		<hr/>
+    		<nav-item with="&User"><ht key="user.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+			</navigation>
+		</div>
+	</div>
+</def>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Person"><ht key="person.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&DonationCard"><ht key="donation_card.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&User"><ht key="user.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <!--
+    <nav-item with="&Atpost"><ht key="atpost.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Currency"><ht key="currency.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&District"><ht key="district.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Donationcondition"><ht key="donationcondition.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    
+    <nav-item with="&Donationtype"><ht key="donationtype.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Paymentmode"><ht key="paymentmode.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Salutation"><ht key="salutation.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&State"><ht key="state.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Taluka"><ht key="taluka.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Donationperiod"><ht key="donationperiod.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Person"><ht key="person.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&User"><ht key="user.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&DonationCard"><ht key="donation_card.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Donation"><ht key="donation.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    -->
+  </navigation>
+</def>
+
+<def tag="app-name">Student's Welfare Association</def>
+
+<def tag='collection'>
+  <ul class='collection #{collection_name :dasherize => true}' merge-attrs unless='empty?'>
+    <li class='#{scope.even_odd} #{model_id_class}' repeat='&select_viewable' param='item'>
+      <do param='default'><card param/></do>
+    </li>
+  </ul>
+  <empty-collection-message param='empty-message'/>
+</def>
+
+
+
+<!-- My hack to display an unordered list of links for acts-as-tree hierarchy.
+     If you pass to="collection" attribute, the links will change to 
+     index_for_collection view of the parent -->
+<def tag="links-for-tree" attrs="to">
+    <%
+        def tree_ul(acts_as_tree_set, init=true, &block)
+            if acts_as_tree_set.size > 0
+                %><ul><%
+                acts_as_tree_set.collect do |item|
+                    next if item.parent_id && init 
+                    %><li><%
+                    yield item
+                    tree_ul(item.children, false, &block) if item.children.size > 0
+                    %></li><%
+                end
+                %></ul><%
+            else
+                %>(none)<%
+            end
+        end
+        def emit_link(my_item, to)
+            item_for = to.nil? ? my_item : my_item.send(to)
+            %><a with="&item_for"><%= my_item.name %></a> <%= "(#{item_for.count})" if item_for.respond_to?('count') %><%
+        end        
+    %>
+    <% tree_ul(this, true) {|item| emit_link(item, to) } %>
+</def> 
+
+<!-- ====== Person Pages ====== -->
+
+<def tag="personfields">
+	<table class="table-plus">
+		<tr>
+    	<td width="50%">
+      	<field-list fields="salutation, surname, first_name, middle_name, gender, email" param/>
+      </td>
+      <td width="50%">
+      	<field-list fields="birth_date, phone, mobile, annual_income, pan_no" param/>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        <field-list fields="address1_line1, address1_line2, country, state, district, taluka, atpost, address1_pin_code" param/>
+      </td>
+    </tr>
+  </table>
+</def>
+
+<def tag="form" for="Person">
+  <form merge param="default">
+    <error-messages param/>
+    <personfields/>
+    <div param="actions">
+      <submit label="#{ht 'person.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="show-page" for="Person">
+  <page merge title="#{ht 'person.show.title', :default=>['Person'] }">
+
+    <body: class="show-page person" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="person.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="person.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Person
+              </ht>
+            </a>
+          </header>
+          <section param="content-body">
+            <personfields/>
+          </section>
+    </content:>
+  </page>
+</def>
+
+<!-- ====== Person Pages End ====== -->
+
+<def attrs='name' tag='hjq-datepicker'>
+	<%
+options, attrs = attributes.partition_hash(['altField', 'altFormat', 'appendText', 'buttonImage', 'buttonImageOnly', 'buttonText', 'changeMonth', 'changeYear', 'closeText', 'constrainInput', 'currentText', 'dateFormat', 'dayNames', 'dayNamesMin', 'dayNamesShort', 'defaultDate', 'duration', 'firstDay', 'gotoCurrent', 'hideIfNoPrevNext', 'isRTL', 'maxDate', 'minDate', 'monthNames', 'monthNamesShort', 'navigationAsDateFormat', 'nextText', 'numberOfMonths', 'prevText', 'selectOtherMonths','shortYearCutoff', 'showAnim', 'showButtonPanel', 'showCurrentAtPos', 'showMonthAfterYear', 'showOn', 'showOptions', 'showOtherMonths', 'stepMonths', 'yearRange'])
+  events, html_attrs = attrs.partition_hash(['beforeShow', 'beforeShowDay', 'onChangeMonthYear', 'onClose', 'onSelect'])
+%>
+ <annotate-tag options='&options' tag='hjq-datepicker' init='hjq.datepicker.init' events='&events'/>
+ <% html_attrs = add_classes(html_attrs, "hjq-annotated"); %>
+ <%= text_field_tag(name, this, html_attrs) %>
+</def>
+
+<def tag="input" for="Date">
+  <hjq-datepicker dateFormat="dd-mm-yy" merge />
+</def>
+
+<def tag="annotate-tag">
+  <%= "<!-- json_annotation (#{attributes.to_json}); -->".html_safe %>
+</def> 
+
+
+
+
+
+

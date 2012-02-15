@@ -1,0 +1,184 @@
+html, body { background:#8cb2cb }
+body { width: 100%; }
+
+div.page-header .app-name{
+	text-indent: 2px;
+	background:   url(../images/samitilogo.jpg) no-repeat left top;
+	color: black;
+	text-align: right;
+	height: 20px;
+}
+
+div.page-header .main-nav {
+	position: relative;
+	top: 0px;
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	padding: 0;
+	text-align: right;
+	/*padding-left: 230px;*/
+	background: #3e628a;
+}
+
+.page-footer {
+	position: relative;
+	top: 0px;
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	padding: 0;
+	text-align: right;
+	background: #3e628a;
+}
+
+div.page-header .main-nav li {
+	margin: 0;
+	padding: 4px;
+	display:inline;
+	float:none;
+	/*border-left: 1px dotted #eee;*/
+	background: #3e628a;
+	color: silver;
+}
+div.page-header .navigation.main-nav li a {
+	padding: 3px 8px;
+	margin: 0;
+	font-weight: normal;
+	display:inline;
+	font-size: 16px;
+	font-weight: bold;
+	background: #3e628a;
+	color: white;
+}
+div.page-header .navigation.main-nav li.current a {
+	background: #8cb2cb;
+	color: black;
+	padding: 3px 4px 8px 4px;
+	border: 0px;
+	/*-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px 10px 0px 0px;*/
+}
+div.page-header .navigation.main-nav li a:hover {
+	background: #A9BACF;
+	color: black;
+}
+
+/*div.page-content, .aside { background: white; }*/
+
+.aside1 { 
+	
+	width: 150px; 
+	padding: 10px; 
+	/*border: 1px solid #78797b; */
+	/*background: #f4f8f9; */
+	background: #8cb2cb;
+	border-left: 2px solid #3e628a;
+}
+
+.content {
+	border-top: 2px solid #3e628a;
+	border-left: 2px solid #3e628a; 
+	border-right: 2px solid #3e628a;
+	background: #ffffff;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px 0px 0px 0px
+}
+
+.search-and-browse {
+	/*background: #A9BACF;*/
+	background: #f6f6fc; color: black;
+	border: 1px solid #8cb2cb;
+	font-size: 11px;
+	margin: 4px;
+}
+.search-and-browse h3 {
+	/*background: #313367; color: white;
+	background: #9da3ad; color: white;
+	background: #e5e5e5; color: black;*/
+	background: #3e628a; color: white;
+	margin: 0; padding: 3px 10px;
+	font-weight: bold; font-size: 14px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px 10px 0px 0px;
+}
+.search-and-browse a { background: none; color: #333333;}
+.search-and-browse .navigation { list-style-type: none; }
+.search-and-browse .navigation li { padding: 3px 0; font-size: 14px; lineheight: 14px; margin-left: 10px;}
+.search-and-browse .navigation li a { border:none;}
+.search-and-browse .search form { margin: 0 3px 3px 3px;}
+.search-and-browse .search p { margin: 3px;}
+.search-and-browse .search-field { width: 120px;}
+.search-and-browse .submit-button { padding: 2px;}
+.search-and-browse .browse-by-audience select { margin: 5px 3px; width: 92%;}
+
+.table-plus table th {
+	padding: 2px 10px;
+	color: #000; background: #8cb2cb;
+	font-weight: bold; font-size: 14px;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px 5px 0px 0px;*/
+	border-bottom: 1px solid #3e628a; 
+	border-left: 0px solid #3e628a;
+	border-right: 1px solid #3e628a;
+	border-top: 0px solid #3e628a;
+}
+
+.table-plus table th a {color: black;}
+
+.table-plus table {width: auto; margin: 20px 0;}
+.table-plus table td {
+	padding: 1px 10px; 
+	border-bottom: 1px solid #8cb2cb; 
+	border-left: 0px solid #8cb2cb;
+	border-right: 1px solid #8cb2cb;
+	color: #666;
+}
+
+.table-plus table {
+	border-left: 1px solid #8cb2cb;
+	border-top: 1px solid #8cb2cb;
+}
+
+.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.round20 {
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.front-page .welcome-message {
+	padding: 0px 20px 20px; border: 1px solid #e8e8e8;
+	width: 400px;
+	color: #222;
+	background: url(../../images/50-ACD3E6-fff.png) repeat-x #fff;
+}
+
+.section.content {background: #ffffff;}
+
+.page-header div.search {
+ 	float: left;
+ 	padding: 0 30px 8px 15px;
+ 	
+ }
+ 
+ #search-results-panel {
+	position: absolute; top: 180px; left: 10px; z-index: 50;
+	width: 150; height: 500px; overflow: auto;
+	padding: 0 20px 20px; border: 1px solid #ddd;
+	color: black; background: #f2f2f2;
+}
+
+.showtable {border: 1px solid #8cb2cb; width: 100%;}
+	
+
+.field-list textarea, .field-list input[type=text], .field-list input[type=password] { width: 100%; margin: 0; }
+

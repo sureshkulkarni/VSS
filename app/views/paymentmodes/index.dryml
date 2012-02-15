@@ -1,0 +1,8 @@
+<index-page>
+	<sm:><search-and-browse-donation/></sm:>
+	<collection: replace>
+		<div>
+			<table-plus fields="this" />
+		</div>
+	</collection:>
+</index-page>

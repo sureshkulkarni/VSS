@@ -1,0 +1,8 @@
+<index-page>
+	<collection: replace>
+		<div>
+			<table-plus fields="this, role, email_address" />
+		</div>
+	</collection:>
+</index-page>
+

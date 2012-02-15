@@ -1,0 +1,26 @@
+<page title="Home">
+	<body: class="front-page"/>
+  <content:>
+   	<header class="content-header">
+   	  <h1>Welcome to <i><app-name/></i> System</h1>
+   	  <section class="welcome-message round20">
+     	  <h3>The system will enable you to maintain records for:</h3>
+     	  <ul>
+     	    <li>Donations</li>
+     	    <li>Students</li>
+     	  </ul>
+      	<% if User.count == 0 -%>
+    	    <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+     	    <form with="&this || User.new" without-cancel>
+     	  	  <field-list: fields="name, email_address, password, password_confirmation"/>
+     	      <submit: label="Register Administrator"/>
+     	    </form>
+     	  <% end -%>
+      </section>
+     
+    </header>
+    <section class="content-body"></section>
+  </content:>
+</page>
+
+
